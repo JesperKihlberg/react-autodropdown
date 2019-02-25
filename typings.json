@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nightwatch": "registry:npm/nightwatch#1.0.0+20160730075309",
+    "react-redux": "registry:npm/react-redux#4.4.0+20160614222153"
+  }
+}

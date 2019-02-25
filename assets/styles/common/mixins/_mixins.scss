@@ -1,0 +1,88 @@
+@import "../variables";
+
+@mixin table() {
+  border-collapse: separate !important;
+  border-spacing: 0;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@mixin tableHeader() {
+  border: none;
+  height: var(--table-header-height);
+  padding: var(--table-header-padding);
+}
+@mixin tableCell() {
+  padding: var(--table-cell-padding);
+  height: var(--table-cell-height);
+  border: var(--table-cell-border);
+  border-width: var(--table-cell-border-width);
+  border-radius: var(--table-cell-border-radius);
+}
+@mixin baseShadow() {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+  margin-bottom: 0;
+  display: block;
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@mixin buttonShadow() {
+  @include baseShadow();
+  margin-right: var(--button-shadow-margin-right);
+  margin-left: var(--button-shadow-margin-left);
+  margin-top: var(--button-shadow-margin-top);
+  border-radius: var(--button-shadow-border-radius);
+}
+@mixin shadow() {
+  @include baseShadow();
+  margin-right: var(--shadow-margin-right);
+  margin-left: var(--shadow-margin-left);
+  margin-top: var(--shadow-margin-top);
+  border-radius: var(--shadow-border-radius);
+}
+@mixin activeInput() {
+  padding-left: calc(var(--input-padding-left) - var(--input-active-border-width) + var(--input-border-width));
+  padding-right: calc(var(--input-padding-left) - var(--input-active-border-width) + var(--input-border-width));
+  border: var(--input-active-border);
+  box-shadow: none !important;
+  background-color: var(--input-active-background-color) !important;
+  color: var(--input-active-color);
+}
+@mixin input() {
+  padding-left: var(--input-padding-left);
+  padding-right: var(--input-padding-left);
+  background-color: var(--input-background-color) !important;
+  color: var(--input-color);
+  border-radius: var(--input-border-radius);
+  border: var(--input-border);
+  box-shadow: none !important;
+  &::placeholder {
+    color: var(--input-placeholder-color) !important;
+  }
+  &:focus,
+  &:active {
+    @include activeInput();
+  }
+}
+@mixin transparentButton() {
+  height: var(--transparent-button-height);
+  font-weight: var(--transparent-button-font-weight);
+  position: var(--transparent-button-position);
+  padding: var(--transparent-button-padding);
+  background-color: var(--transparent-button-background-color) !important;
+  outline: var(--transparent-button-outline) !important;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: var(--transparent-button-active-text-decoration);
+    cursor: var(--transparent-button-active-cursor);
+    box-shadow: var(--transparent-button-active-box-shadow);
+    background-color: var(--transparent-button-active-background-color) !important;
+    outline: var(--transparent-button-active-outline) !important;
+  }
+}

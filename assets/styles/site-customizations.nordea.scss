@@ -1,0 +1,585 @@
+:root {
+  $clr-primary: #232da5;
+  $clr-primary-dark: #020b5a;
+  $clr-primary-light: #a6c3e6;
+  $clr-primary-lighter: #ebf0f6;
+
+  $clr-accent: #deedfd;
+  $clr-accent-dark: #7cbbf9;
+
+  $clr-neutral-lighter: #f4f2f1;
+  $clr-neutral-light: #dbdad9;
+  $clr-neutral: #c2c1c0;
+  $clr-neutral-dark: #8f8e8d;
+  $clr-neutral-darker: #424242;
+
+  $clr-text: #020b5a;
+  $clr-text-secondary: white;
+
+  $clr-error: #d0021b;
+  $clr-warning: #ffc107;
+  $clr-ok: #33a665;
+
+  $clr-background: white;
+  $clr-background-secondary: $clr-neutral-lighter;
+
+  $clr-shadow-primary: rgba(2, 11, 90, 0.6);
+  $clr-shadow-accent: rgba(2, 11, 90, 0.15);
+  $clr-shadow-default: rgba(7, 26, 49, 0.55);
+
+  $button-shadow-primary: rgba(2, 11, 90, 0.6);
+  $button-shadow-accent: rgba(2, 11, 90, 0.15);
+  $button-shadow-default: rgba(7, 26, 49, 0.55);
+
+  --hero-url: url("../../../assets/img/hero.png");
+  --header-logo-url: url("../../../assets/img/logo-nordea.svg");
+  --faded-logo-url: url("../../../assets/img/logo-nordea-faded.svg");
+  --header-burger-icon-url: url("../../../assets/img/burger-nordea.svg");
+  --body-background: url("../../img/bg-wave-x-1-copy.png");
+  --footer-bankid-url: url("../../../../assets/img/bankID_Logo_Negativ_RGB.png");
+  --shapes-url: url("../../../../assets/img/col-shapes-nordea.svg");
+  --notice-image-url: url("../../../../assets/img/img-merk-right.png");
+
+  --text-color: $clr-text;
+  --font-family: "Open Sans";
+
+  $link-color: $clr-text;
+  --link-color: $link-color;
+
+  $link-hover-color: $link-color;
+
+  $box-border: $clr-neutral-light;
+  $box-border-radius: 0;
+  $input-height: 54px;
+  $default-border-radius: 0;
+
+  $checkbox-radiobutton-size: 25px;
+
+  --warning-color: $clr-warning;
+  --ok-color: $clr-ok;
+  --error-color: $clr-error;
+  --disabled-color: $clr-neutral;
+  --disabled-background-color: $clr-neutral-light;
+
+  $base-wizard-bottom-margin: 26px;
+  --base-padding: 15px;
+  --base-margin: 15px;
+
+  // ---------------text---------------------
+  --text-emphasized-color: $clr-primary;
+  --text-warning-color: $clr-warning;
+  --text-danger-color: $clr-error;
+
+  --text-primary-color: $clr-primary;
+
+  --text-bold-light-weight: 300;
+  --text-bold-font-weight: 600;
+  --text-bolder-font-weight: 800;
+
+  --text-large-font-size: 18px;
+  --text-large-line-height: 34px;
+
+  --text-larger-font-size: 20px;
+  --text-larger-line-height: 38px;
+
+  --text-very-large-font-size: 28px;
+  --text-very-large-line-height: 38px;
+
+  --text-font: var(--font-family);
+  --text-font-size: 16px;
+  --text-line-height: 30px;
+
+  --text-small-font-size: 14px;
+  --text-small-line-height: 23px;
+
+  --text-smaller-font-size: 12px;
+  --text-smaller-line-height: 16px;
+
+  --text-paler-color: $clr-neutral;
+  --text-pale-color: $clr-neutral-dark;
+
+  --text-italic-font-style: italic;
+
+  //--------------input----------------------
+  --base-input-padding: 30px;
+  --base-input-margin: 30px;
+
+  --input-margin: 0 0 var(--base-input-padding) 0;
+  --input-padding-left: 20px;
+  --input-background-color: $clr-background;
+  --input-border-radius: $default-border-radius;
+  --input-border-width: 1px;
+  --input-border: var(--input-border-width) solid var(--input-border-color);
+  --light-input-border-color: $clr-neutral-light;
+  --input-border-color: $clr-neutral-darker;
+  --input-color: $clr-text;
+
+  --input-error-border: 2px solid var(--input-error-color);
+  --input-warning-border: 2px solid var(--input-warning-color);
+
+  --input-placeholder-color: var(--text-pale-color);
+
+  --input-active-background-color: var(--input-background-color);
+  --input-active-color: var(--input-color);
+  --input-active-border-width: 2px;
+  --input-active-border: var(--input-active-border-width) solid $clr-primary;
+
+  --input-label-font-size: var(--text-small-font-size);
+  --input-label-font-weight: var(--text-bold-font-weight);
+  --input-label-margin-bottom: 3px;
+  --input-label-line-height: var(--text-smaller-line-height);
+
+  --input-error-font-size: var(--text-small-font-size);
+  --input-error-font-weight: var(--text-bold-font-weight);
+  --input-error-margin-top: 5px;
+  --input-error-line-height: var(--text-smaller-line-height);
+  --input-error-color: $clr-error;
+  --input-warning-color: $clr-warning;
+
+  --input-primary-shadow: 0 2px 15px 0 $clr-shadow-primary;
+  --input-accent-shadow: 0 2px 15px 0 $clr-shadow-accent;
+  --input-default-shadow: 0 2px 15px 0 $clr-shadow-default;
+
+  --button-primary-shadow: 0 2px 15px 0 $button-shadow-primary;
+  --button-accent-shadow: 0 2px 15px 0 $button-shadow-accent;
+  --button-default-shadow: 0 2px 15px 0 $button-shadow-default;
+
+  --input-box-text-padding-left: 35px;
+
+  --shadow-margin-top: 10px;
+  --shadow-margin-left: 5px;
+  --shadow-margin-right: 5px;
+  --shadow-border-radius: $default-border-radius;
+
+  --checkbox-margin-top: 0 !important;
+  --checkbox-width: $checkbox-radiobutton-size;
+  --checkbox-height: $checkbox-radiobutton-size;
+  --checkbox-border: 1px solid var(--input-border-color);
+  --checkbox-display: flex;
+  --checkbox-align-items: center;
+  --checkbox-justify-content: center;
+  --checkbox-border-radius: $default-border-radius;
+  --checkbox-background-color: var(--input-background-color);
+  --checkbox-cursor: pointer;
+  --checkbox-font-size: 14px;
+  --checkbox-checked-background-color: $clr-primary;
+  --checkbox-checked-color: $clr-background;
+  --checkbox-checked-border: none;
+  --checkbox-text-margin-left: 10px;
+  --checkbox-disabled-background-color: var(--disabled-color);
+  --checkbox-disabled-color: var(--checkbox-checked-color);
+
+  --pecentage-slider-margin: 30px 20px;
+  --pecentage-slider-height: 52px;
+  --pecentage-slider-padding-top: 22px;
+  --pecentage-slider-position: relative;
+  --pecentage-slider-z-index: 10;
+  --pecentage-slider-background-color: transparent;
+  --pecentage-slider-border: 0;
+  --pecentage-slider-font-weight: 600;
+  --pecentage-slider-font-size: 14px;
+
+  --percentage-slider-background-background-color: $clr-primary-light;
+  --percentage-slider-background-border: 0;
+  --percentage-slider-background-top: 6px;
+  --percentage-slider-background-height: 4px;
+  --percentage-slider-background-margin-left: 5px;
+  --percentage-slider-background-margin-right: 4px;
+
+  --percentage-slider-handle-width: 56px;
+  --percentage-slider-handle-height: 32px;
+  --percentage-slider-handle-background-color: $clr-primary;
+  --percentage-slider-handle-border: solid 3px $clr-text-secondary;
+  --percentage-slider-handle-border-radius: 16px;
+  --percentage-slider-handle-display: flex;
+  --percentage-slider-handle-align-items: center;
+  --percentage-slider-handle-justify-content: center;
+  --percentage-slider-handle-margin-left: -27.5px;
+  --percentage-slider-handle-top: -8px;
+  --percentage-slider-handle-cursor: pointer;
+
+  --percentage-slider-handle-line-top: 10px;
+  --percentage-slider-handle-line-width: 2px;
+  --percentage-slider-handle-line-border-radius: 1px;
+  --percentage-slider-handle-line-background-color: $clr-background;
+  --percentage-slider-handle-line-height: 12px;
+  --percentage-slider-handle-line-position: absolute;
+
+  --percentage-slider-handle-line-before-left: 24px;
+  --percentage-slider-handle-line-after-left: 30px;
+  --percentage-slider-handle-line-before-hover-left: 19px;
+  --percentage-slider-handle-line-after-hover-left: 35px;
+
+  --percentage-slider-current-value-margin-top: -57px;
+  --percentage-slider-current-value-text-align: center;
+  --percentage-slider-current-value-background-color: $clr-background;
+  --percentage-slider-current-value-border: var(--input-border);
+  --percentage-slider-current-value-border-radius: 9999px;
+  --percentage-slider-current-value-padding: 2px;
+
+  --percentage-slider-pit-margin-left: -2px;
+  --percentage-slider-pit-width: 5px;
+  --percentage-slider-pit-height: 20px;
+  --percentage-slider-pit-border-radius: 5px;
+  --percentage-slider-pit-color: $clr-text;
+  --percentage-slider-pit-background-color: $clr-primary-light;
+  --percentage-slider-pit-display: flex;
+  --percentage-slider-pit-flex-direction: column;
+  --percentage-slider-pit-justify-content: center;
+  --percentage-slider-pit-left: 0%;
+  --percentage-slider-pit-position: absolute;
+  --percentage-slider-pit-top: -2px;
+  --percentage-slider-pit-z-index: 1;
+
+  --percentage-slider-pit-recommended-color: $clr-primary;
+  --percentage-slider-pit-recommended-background-color: $clr-primary;
+
+  --percentage-slider-top-label-margin-top: -4px;
+  --percentage-slider-top-label-display: block;
+  --percentage-slider-bottom-label-margin-top: 27px;
+
+  --page-width: 1440px;
+  --page-background-color: $clr-background;
+  --wizard-panel-height: 94px;
+  --wizard-panel-valid-height:120px;
+
+  --wizard-panel-header-margin-top: 8px;
+  --wizard-panel-header-margin-bottom: -8px;
+
+  --wizard-panel-border-bottom: 1px solid $clr-neutral;
+  --wizard-panel-padding-top: 37px;
+  --wizard-panel-active-margin-bottom: $base-wizard-bottom-margin;
+  --wizard-panel-active-padding-top: var(--base-input-padding);
+  --wizard-panel-closed-background-color: $clr-text-secondary;
+  --wizard-panel-closed-color: $clr-neutral-light;
+
+  --wizard-panel-valid-color: $clr-primary;
+  --wizard-panel-valid-padding-bottom: var(--base-input-padding);
+  --wizard-panel-valid-font-size: 30px;
+
+  --wizard-panel-popup-max-height: 400px;
+  --wizard-panel-popup-border: 1px solid $box-border;
+  --wizard-panel-popup-padding: var(--table-padding);
+  --wizard-panel-popup-background: $clr-background;
+  --wizard-panel-popup-border-radius: $box-border-radius;
+  --wizard-panel-popup-margin-bottom: var(--base-input-margin);
+
+  --employee-info-form-max-width: 1200px;
+  --employee-info-form-padding: var(--base-input-padding);
+
+  --footer-height: 80px;
+  --footer-main-background-color: $clr-background;
+  --footer-color: $clr-neutral;
+  --footer-border-top: var(--footer-color) solid 1px;
+  --footer-border-bottom: none;
+  --footer-dark-color: $clr-neutral;
+
+  --wizard-footer-main-color: $clr-background;
+  --wizard-footer-dark-color: $clr-primary;
+  --wizard-footer-main-background-color: $clr-accent;
+  --wizard-footer-dark-background-color: $clr-primary;
+  --wizard-footer-border-top: var(--wizard-footer-dark-background-color) solid 1px;
+  --wizard-footer-border-bottom: var(--wizard-footer-dark-background-color) solid 5px;
+
+  --footer-sign-height: 120px;
+  --footer-sign-button-width: 287px;
+  --footer-sign-button-height: var(--button-height);
+
+  --footer-bankid-height: 12px;
+  --footer-bankid-width: 82px;
+  --footer-bankid-background-size: var(--footer-bankid-width) var(--footer-bankid-height);
+
+  --table-odd-row-background-color: $clr-background-secondary;
+  --table-even-row-background-color: $clr-background;
+  --table-border-color: $box-border;
+  --table-border-radius: $box-border-radius;
+  --table-bottom-padding: var(--base-input-padding);
+
+  --table-padding: 20px;
+  --table-header-height: 48px;
+  --table-header-padding: 10px var(--table-padding) 10px var(--table-padding);
+  --table-cell-padding: 0 var(--table-padding);
+  --table-cell-height: 63px;
+  --table-cell-border: 0 solid var(--table-border-color);
+  --table-cell-outer-border: 1px solid var(--table-border-color);
+  --table-cell-border-width: 0 0 1px 0;
+  --table-cell-border-radius: 0 0 0 0;
+
+  --button-disabled-background-color: var(--disabled-background-color);
+  --button-disabled-color: var(--disabled-color);
+
+  --transparent-button-default-text-color: $clr-primary;
+  --transparent-button-danger-text-color: $clr-error;
+  --transparent-button-accent-text-color: $clr-primary;
+
+  --button-width: 170px;
+  --button-height: $base-wizard-bottom-margin * 2;
+  --button-border-radius: 9999px;
+
+  --next-button-margin-bottom: calc( var(--button-height) / -2);
+
+  --button-shadow-margin-top: 10px;
+  --button-shadow-margin-left: 5px;
+  --button-shadow-margin-right: 5px;
+  --button-shadow-border-radius: var(--button-border-radius);
+  --button-icon-padding: 5px;
+
+  --transparent-button-background-color: transparent;
+  --transparent-button-height: 24px;
+  --transparent-button-font-weight: 600;
+  --transparent-button-z-index: 5;
+  --transparent-button-position: sticky;
+  --transparent-button-padding: 0;
+  --transparent-button-outline: none;
+
+  --transparent-button-active-text-decoration: underline;
+  --transparent-button-active-cursor: pointer;
+  --transparent-button-active-box-shadow: none;
+  --transparent-button-active-background-color: transparent;
+  --transparent-button-active-outline: none;
+
+  --accent-button-background-color: $clr-accent;
+  --accent-button-hover-background-color: $clr-accent;
+  --accent-button-color: $clr-primary-dark;
+
+  --white-button-background-color: $clr-background;
+  --white-button-hover-background-color: $clr-background;
+
+  --primary-button-background-color: $clr-primary;
+  --primary-button-hover-background-color: $clr-primary;
+
+  $prev-button-radius: 21px;
+  --prev-button-radius: $prev-button-radius;
+  --prev-button-width: $prev-button-radius * 2;
+  --prev-button-height: $prev-button-radius * 2;
+  --prev-button-margin-left: -$prev-button-radius;
+  --prev-button-border-radius: 50%;
+  --prev-button-margin-top: -58px;
+  --prev-button-margin-bottom: var(--base-input-margin);
+
+  --radio-info-box-unselected-border-padding: var(--base-input-padding);
+  --radio-info-box-background-color: $clr-background;
+  --radio-info-box-border-radius: $box-border-radius;
+  --radio-info-box-title-color: $clr-primary;
+
+  --radio-info-box-unselected-border: solid 1px $box-border;
+
+  --radio-info-box-selected-border-padding: 29px;
+  --radio-info-box-selected-border: solid 2px $clr-primary;
+  --radio-info-box-selected-background-color: $clr-background;
+
+  --radio-button-width: $checkbox-radiobutton-size;
+  --radio-button-height: $checkbox-radiobutton-size;
+  --radio-button-border-radius: 50%;
+  --radio-button-unselected-background-color: $clr-text-secondary;
+  --radio-button-unselected-border: solid 1px $clr-neutral-darker;
+  --radio-button-selected-background-color: $clr-text-secondary;
+  --radio-button-selected-border: solid 6px $clr-primary;
+
+  --addon-width: 39px;
+  --addon-top: 7px;
+  --addon-color: var(--text-pale-color);
+
+  --dropdown-list-container-padding-width: 0 10px 0 10px;
+  --dropdown-list-input-background-color: var(--input-background-color);
+  --dropdown-list-container-background-color: var(--page-background-color);
+  --dropdown-list-selected-item-color: $clr-text-secondary;
+  --dropdown-list-selected-item-background-color: $clr-primary;
+  --search-input-border: $clr-neutral-darker;
+
+  --company-details-count-width: 80px;
+  --company-details-count-margin-right: 30px;
+  --company-details-count-membership-width: 380px;
+
+  --coverage-choice-subtitle-margin-left: 35px;
+  --coverage-choice-text-margin-top: 15px;
+
+  --adjust-offer-header-padding-right: 10px;
+  --adjust-offer-header-font-weight: 700;
+  --adjust-offer-header-padding-right: 10px;
+  --adjust-offer-header-font-weight: 700;
+
+  --adjust-offer-cell-padding: 30px;
+  --adjust-offer-based-on-margin-bottom: 50px;
+
+  --hero-height: 763px;
+  --hero-width: 745px;
+  --hero-background-size: var(--hero-width) var(--hero-height);
+
+  --landing-page-info-container-margin-top: 90px;
+  --landing-page-info-container-margin-left: 135px;
+  --landing-page-info-container-z-index: 1;
+  --landing-page-info-container-position: absolute;
+  --landing-page-header-max-width: 570px;
+
+  --landing-page-brief-width: 425px;
+
+  --landing-page--checklist-margin-top: 20px;
+
+  --landing-page-checklist-icon-margin-right: 15px;
+
+  --landing-page-button-label-margin-top: 30px;
+  --landing-page-button-label-margin-bottom: 20px;
+
+  --landing-page-button-height: 78px;
+  --landing-page-button-width: 270px;
+  --landing-page-button-margin-right: 30px;
+  --landing-page-button-float: left;
+
+  --landing-page-button-text-display: block;
+  --landing-page-button-text-white-space: normal;
+  --landing-page-button-text-margin-left: 20px;
+  --landing-page-button-text-margin-right: 20px;
+
+  --header-height: 134px;
+  --header-background-color: $clr-background;
+  --header-display: flex;
+  --header-align-items: center;
+  --header-padding-left: 40px;
+  --header-padding-right: 40px;
+  --header-border-bottom: var(--wizard-panel-border-bottom);
+
+  --header-element-flex: 1;
+  --header-element-display: flex;
+  --header-element-justify-content: center;
+
+  --header-logo-height: 32px; //66
+  --header-logo-width: 151px; //312
+  --header-logo-background-size: var(--header-logo-width) var(--header-logo-height);
+  --header-logo-margin-top: 13px;
+
+  --faded-logo-height: 16px;
+  --faded-logo-width: 75.5px;
+  --faded-logo-background-size: var(--faded-logo-width) var(--faded-logo-height);
+
+  --header-burger-height: 64px;
+  --header-burger-width: 64px;
+  --header-burger-margin-top: 0px;
+  --header-burger-icon-height: 17px;
+  --header-burger-icon-width: 22px;
+  --header-burger-icon-background-size: var(--header-burger-icon-width) var(--header-burger-icon-height);
+
+  --offer-intro-header-margin-top: 30px;
+
+  --offer-intro-content-margin-bottom: 140px;
+
+  --offer-intro-panel-container-margin-top: 30px;
+  --offer-intro-panel-container-width: 1170px;
+  --offer-intro-panel-container-margin-left: auto;
+  --offer-intro-panel-container-margin-right: auto;
+  --offer-intro-panel-container-position: relative;
+  --offer-intro-panel-container-z-index: 10;
+
+  --offer-intro-panel-padding-left: 30px;
+  --offer-intro-panel-padding-right: 30px;
+  --offer-intro-panel-padding-top: 60px;
+  --offer-intro-panel-width: 100%;
+  --offer-intro-panel-height: 100%;
+  --offer-intro-panel-background-color: white;
+  --offer-intro-panel-border: solid 1px #e5eaef;
+  --offer-intro-panel-border-radius: 6px;
+  --offer-intro-panel-text-align: center;
+  --offer-intro-panel-vertical-align: middle;
+  --offer-intro-panel-z-index: 10;
+
+  --offer-intro-panel-shadow-margin: 20px 20px 0 20px;
+  --offer-intro-panel-shadow-box-shadow: 0 12px 50px 0 rgba(7, 26, 49, 0.2);
+
+  --offer-intro-element-list-margin-top: 25px;
+  --offer-intro-element-list-margin-bottom: 65px;
+  --offer-intro-element-list-display: flex;
+  --offer-intro-element-width: 330px;
+  --offer-intro-element-flex-grow: 1;
+
+  --offer-intro-button-height: 62px;
+  --offer-intro-button-width: 270px;
+  --offer-intro-button-margin-left: auto;
+  --offer-intro-button-margin-right: auto;
+  --offer-intro-button-margin-top: -6px;
+  --offer-intro-button-margin-bottom: -31px;
+
+  --offer-intro-bottom-container-display: flex;
+  --offer-intro-bottom-container-width: 970px;
+  --offer-intro-bottom-container-margin-left: auto;
+  --offer-intro-bottom-container-margin-right: auto;
+  --offer-intro-bottom-container-margin-top: 60px;
+
+  --offer-intro-bottom-container-element-width: 470px;
+
+  --offer-intro-bottom-container-first-element-margin-right: 30px;
+
+  --offer-intro-contact-margin-top: 42px;
+  --offer-intro-email-container-display: flex;
+
+  --offer-intro-emailinput-width: 380px;
+
+  --offer-intro-email-button-width: 81px;
+  --offer-intro-email-button-margin-top: 22px;
+  --offer-intro-email-button-margin-left: 10px;
+
+  --offer-intro-terms-label-width: 465px;
+  --offer-intro-terms-label-display: block;
+
+  --transfer-intro-header-margin-top: 30px;
+  --transfer-intro-main-icon-font-size: 48px;
+
+  --transfer-intro-panels-margin-top:38px;
+
+  --transfer-intro-panel-margin-left: 30px;
+  --transfer-intro-panel-padding-left: 10px;
+  --transfer-intro-panel-padding-right: 10px;
+  --transfer-intro-panel-padding-top: 46px;
+  --transfer-intro-panel-width: 370px;
+  --transfer-intro-panel-height: 673px;
+  --transfer-intro-panel-background-color: white;
+  --transfer-intro-panel-border: solid 1px #e5eaef;
+  --transfer-intro-panel-border-radius: 6px;
+  --transfer-intro-panel-text-align: center;
+  --transfer-intro-panel-vertical-align: middle;
+  --transfer-intro-panel-z-index: 10;
+  --transfer-intro-panel-margins-left-right: 30px;
+
+
+  --transfer-intro-shapes-height: 139px;
+  --transfer-intro-shapes-width: 370px;
+  --transfer-intro-shapes-background-size: var(--transfer-intro-shapes-width) var(--transfer-intro-shapes-height);
+
+  --transfer-intro-panel-header-margin-top: 25px;
+  --transfer-intro-panel-header-line-height: 28px;
+  --transfer-intro-panel-description-margin-top: 10px;
+  --transfer-intro-panel-description-height: 92px;
+
+  --transfer-intro-checklist-padding-top: 20px;
+  --transfer-intro-checklist-height: 220px;
+
+  --transfer-intro-checklist-margin-left: 10px;
+
+  --transfer-intro-note-margin-top: 20px;
+  --transfer-intro-note-height: 53px;
+
+  --transfer-intro-button-height: 62px;
+
+  --transfer-intro-star-margin-top: 20px;
+
+  --transfer-intro-notice-panel-width: 1168px;
+  --transfer-intro-notice-panel-height: 268px;
+  --transfer-intro-notice-panel-background-color: #fafcff;
+  --transfer-intro-notice-panel-border: solid 1px #e5eaef;
+  --transfer-intro-notice-panel-border-radius: 6px;
+  --transfer-intro-notice-panel-text-align: center;
+  --transfer-intro-notice-panel-vertical-align: middle;
+  --transfer-intro-notice-panel-z-index: 10;
+  --transfer-intro-notice-panel-margin-top: 60px;
+  --transfer-intro-notice-panel-margin-bottom: 140px;
+  --transfer-intro-notice-header-margin-left: 40px;
+  --transfer-intro-notice-header-margin-top: 40px;
+
+  --transfer-intro-info-elements-margin-left: 40px;
+  --transfer-intro-info-elements-margin-top: 17px;
+  --transfer-intro-info-elements-max-width: 488px;
+
+  --notice-image-height: 266px;
+  --notice-image-width: 654px;
+  --notice-image-background-size: var(--notice-image-width) var(--notice-image-height);
+
+}

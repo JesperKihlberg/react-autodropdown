@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.tabSize": 2,
+    "eslint.enable": true,
+    "files.trimTrailingWhitespace": true,
+    "javascript.validate.enable": false,
+    "editor.tabCompletion": true,
+    "vsicons.presets.angular": false,
+    "git.ignoreLimitWarning": true,
+    "typescript.tsdk": "node_modules\\typescript\\lib"
+  }

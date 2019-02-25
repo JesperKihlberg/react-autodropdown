@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "module": "es6",
+    "target": "es6",
+    "sourceMap": true,
+    "jsx": "react",
+    "allowJs": false,
+    "declaration": false,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "inlineSourceMap": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": "./src",
+    "paths": {
+      "API/*": ["API/*"],
+      "Components/*": ["Components/*"],
+      "Pages/*": ["Pages/*"],
+      "Redux/*": ["Redux/*"],
+      "Core/*": ["Core/*"]
+    },
+
+    "lib": [
+      "es5",
+      "es6",
+      "dom",
+      "es2015.core",
+      "es2015.collection",
+      "es2015.generator",
+      "es2015.iterable",
+      "es2015.promise",
+      "es2015.proxy",
+      "es2015.reflect",
+      "es2015.symbol",
+      "es2015.symbol.wellknown",
+      "esnext.asynciterable"
+    ]
+  },
+  "exclude": ["node_modules", "bin", ".vscode", "testPreprocessor.ts", "lib", "extracted", "build"]
+}

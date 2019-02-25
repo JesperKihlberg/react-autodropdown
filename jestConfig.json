@@ -1,0 +1,41 @@
+{
+    "transform": {".*": "./testPreprocessor.js"},
+    "automock": true,
+    "timers": "fake",
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/test-setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupTestFrameworkScriptFile": "./testFrameworkSetup.ts",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react/",
+      "<rootDir>/node_modules/react-dom/",
+      "<rootDir>/node_modules/react-addons-test-utils/",
+      "<rootDir>/node_modules/react-test-renderer/",
+      "<rootDir>/node_modules/react-redux/",
+      "<rootDir>/node_modules/react-router/",
+      "<rootDir>/node_modules/prop-types/",
+      "<rootDir>/node_modules/create-react-class/",
+      "<rootDir>/node_modules/classnames/",
+      "<rootDir>/node_modules/lodash/",
+      "<rootDir>/node_modules/global/",
+      "<rootDir>/node_modules/ts-action/",
+      "<rootDir>/node_modules/enzyme/",
+      "<rootDir>/node_modules/enzyme-adapter-react-16/",
+      "<rootDir>/node_modules/enzyme-to-json/",
+      "react-proxy",
+      "core-js",
+      "babel-runtime",
+      "<rootDir>/node_modules/react-bootstrap",
+      "<rootDir>/node_modules/intl-messageformat/lib/es5.js",
+      "<rootDir>/node_modules/intl-relativeformat/lib/es5.js",
+      "<rootDir>/node_modules/uncontrollable",
+      "react-prop-types"
+    ],
+  "roots": ["<rootDir>/src/"],
+  "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|ts|tsx)$",
+  "moduleFileExtensions": ["ts", "tsx", "js"]
+}

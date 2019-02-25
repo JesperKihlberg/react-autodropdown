@@ -1,0 +1,66 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "webRoot": "${workspaceRoot}/src",
+      "urlFilter": "https://localhost:3443/*",
+      "skipFiles": [
+        "node_modules/**"
+      ]
+    },
+    {
+      "name": "Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
+      "stopOnEntry": false,
+      "args": [
+        "--runInBand",
+        "--config",
+        "jestConfig.json"
+      ],
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": null,
+      "runtimeArgs": [
+        "--nolazy",
+        "--harmony"
+      ],
+      "env": {
+        "NODE_ENV": "test"
+      },
+      "console": "internalConsole",
+      "sourceMaps": true,
+      "outDir": null
+    },
+    {
+      "name": "Watch",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
+      "stopOnEntry": false,
+      "args": [
+        "--runInBand",
+        "--config",
+        "jestConfig.json",
+        "--watch"
+      ],
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": null,
+      "runtimeArgs": [
+        "--nolazy",
+        "--harmony"
+      ],
+      "env": {
+        "NODE_ENV": "test"
+      },
+      "console":"externalTerminal",
+      "sourceMaps": true,
+      "outDir": null
+    }
+  ]
+}
