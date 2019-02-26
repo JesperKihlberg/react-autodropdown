@@ -8,7 +8,7 @@ interface IMainProps extends IMainExternalProps, IMainDispatchProps {}
 
 class Main extends React.Component<IMainProps, {}> {
   render() {
-    return <div>Let Kort</div>;
+    return <div>MAIN</div>;
   }
 }
 
