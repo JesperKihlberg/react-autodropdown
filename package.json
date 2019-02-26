@@ -12,10 +12,10 @@
     "assets"
   ],
   "scripts": {
-    "start": "nodemon --ext js,ts,tsx,jsx,json -w ./  --ignore ./public/ --ignore ./src/ --ignore graphQL/ devServer.js --ignore nightwatch/ --ignore build/messages/  --ignore build/ --ignore extracted/ ",
-    "build": "cross-env NODE_ENV=development webpack -d --config webpack.config.build.js --bail",
-    "compiletests": "cross-env NODE_ENV=test webpack -d --config webpack.config.test.js --bail",
-    "compiletests-end": "cross-env NODE_ENV=test webpack -d --config webpack.config.test.endtoend.js --bail",
+    "start": "nodemon --ext js,ts,tsx,jsx,json -w ./  --ignore ./public/ --ignore ./src/ --ignore graphQL/ devServer.js --ignore nightwatch/ --ignore build/messages/  --ignore build/ --ignore extracted/ --config config/webpack.config.js",
+    "build": "cross-env NODE_ENV=development webpack -d --config config/webpack.config.build.js --bail",
+    "compiletests": "cross-env NODE_ENV=test webpack -d --config config/webpack.config.test.js --bail",
+    "compiletests-end": "cross-env NODE_ENV=test webpack -d --config config/webpack.config.test.endtoend.js --bail",
     "compiletestswatch": "npm run compiletests -- --watch",
     "pretest": "tsc -p tsconfig_testPreProcessor.json",
     "test": "jest --no-cache --config jestConfig.json",
@@ -97,6 +97,7 @@
     "typescript": "3.3.3333",
     "url-loader": "1.1.2",
     "webpack": "4.29.5",
+    "webpack-cli": "^3.2.3",
     "webpack-config": "7.5.0",
     "webpack-dev-middleware": "3.6.0",
     "webpack-hot-middleware": "2.24.3"

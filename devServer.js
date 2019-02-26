@@ -1,7 +1,7 @@
 let path = require("path");
 let express = require("express");
 let webpack = require("webpack");
-let config = require("./webpack.config.dev.hotreload");
+let config = require("./config/webpack.config.dev.hotreload");
 let fs = require("fs");
 let https = require("https");
 

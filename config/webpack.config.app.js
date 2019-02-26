@@ -7,8 +7,8 @@ let HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = new WebpackConfig.Config().extend("webpack.config.js").merge({
   entry: {
     app: [
-      path.resolve(__dirname, "src", "assetDependencies.js"),
-      path.resolve(__dirname, "src", "app.tsx")
+      path.resolve(path.resolve("src") + "/assetDependencies.js"),
+      path.resolve(path.resolve("src") + "/app.tsx")
     ]
     // ,
     // graphiqlapp: path.resolve(__dirname, "src", "graphiqlapp.tsx")

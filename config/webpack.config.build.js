@@ -7,8 +7,8 @@ let glob = require("glob");
 let autoprefixer = require("autoprefixer");
 let ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const { CheckerPlugin } = require("awesome-typescript-loader");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const extractCss = new ExtractTextPlugin("package.css");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const extractCss = new ExtractTextPlugin("package.css");
 
 let libraryName = "package";
 let outputFile = libraryName + ".js";
@@ -20,13 +20,17 @@ const isTypescriptOrJavascript = function(fileName) {
   return isTypescript(fileName) || fileName.endsWith(".js");
 };
 function srcPath(subdir) {
-  return path.join(__dirname, "src", subdir);
+  return path.join(path.resolve("src"), subdir);
 }
 
 module.exports = {
-  mode:"production",
+  mode: "production",
   entry: {
-    app: [__dirname + "/typings/package.d.ts", __dirname + "/src/assetDependencies.js", __dirname + "/src/index.tsx"]
+    app: [
+      path.resolve("typings") + "/package.d.ts",
+      path.resolve("src") + "/assetDependencies.js",
+      path.resolve("src") + "/index.tsx"
+    ]
   },
   output: {
     path: path.resolve("lib"),
@@ -36,16 +40,13 @@ module.exports = {
     umdNamedDefine: true
   },
   plugins: [
-    extractCss,
+    // extractCss,
     new CheckerPlugin(),
     new webpack.DefinePlugin({
       "process.env": { NODE_ENV: JSON.stringify(process.env.NODE_ENV || "development") }
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new ProgressBarPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
-    })
+    new ProgressBarPlugin()
   ],
   resolve: {
     extensions: [".tsx", ".js", ".ts"],
@@ -74,7 +75,7 @@ module.exports = {
       {
         test: isTypescriptOrJavascript,
         loader: "babel-loader",
-        include: path.join(__dirname, "src"),
+        include: path.resolve("src"),
         exclude: /(node_modules|bower_components)/,
         query: {
           plugins: [
@@ -85,7 +86,7 @@ module.exports = {
               }
             ]
           ],
-          presets: ["@babel/preset-env"],
+          presets: ["@babel/preset-env"]
         }
       },
       {
@@ -114,106 +115,108 @@ module.exports = {
         loader: "url-loader?limit=100000"
       },
       {
-        // global css
+        // Global css
         test: /\.css$/,
         include: /node_modules/,
-        use: extractCss.extract({
-          publicPath: "./",
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                root: "./",
-                modules: true,
-                importLoaders: 2,
-                localIdentName: "[local]"
-              }
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: true,
-                plugins: () => [autoprefixer()]
-              }
-            },
-            {
-              loader: "resolve-url-loader"
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              root: "./",
+              modules: true,
+              importLoaders: 2,
+              localIdentName: "[local]"
             }
-          ]
-        })
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+              plugins: () => [autoprefixerplugin, customProperties()]
+            }
+          },
+          {
+            loader: "resolve-url-loader"
+          }
+        ]
       },
       {
         // local css
         test: /\.css$/,
         exclude: /node_modules/,
-        use: extractCss.extract({
-          publicPath: "./",
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                root: "./",
-                modules: true,
-                importLoaders: 2,
-                localIdentName: "[name]__[local]__[hash:base64:5]"
-              }
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: true,
-                plugins: () => [autoprefixer()]
-              }
-            },
-            {
-              loader: "resolve-url-loader"
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              root: "./",
+              modules: true,
+              importLoaders: 3,
+              localIdentName: "[name]__[local]__[hash:base64:5]"
             }
-          ]
-        })
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+              plugins: () => [autoprefixerplugin, customProperties()]
+            }
+          },
+          {
+            loader: "resolve-url-loader"
+          },
+          {
+            loader: "sass-loader?sourceMap"
+          }
+        ]
       },
       {
         test: /\.scss$/,
-        use: extractCss.extract({
-          publicPath: "./",
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                root: "./",
-                modules: true,
-                importLoaders: 4,
-                localIdentName: "[name]__[local]__[hash:base64:5]"
-              }
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: true,
-                plugins: () => [autoprefixer()]
-              }
-            },
-            {
-              loader: "resolve-url-loader"
-            },
-            {
-              loader: "sass-loader?sourceMap"
-            },
-            {
-              loader: "sass-resources-loader?sourceMap",
-              options: {
-                resources: [
-                  "./assets/styles/bootstrap/pre-customizations.default.scss",
-                  "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss",
-                  "./assets/styles/bootstrap/customizations.scss"
-                ]
-              }
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              root: "./",
+              modules: true,
+              importLoaders: 4,
+              localIdentName: "[name]__[local]__[hash:base64:5]"
             }
-          ]
-        })
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+              plugins: () => [autoprefixerplugin, customProperties()]
+            }
+          },
+          {
+            loader: "resolve-url-loader"
+          },
+          {
+            loader: "sass-loader?sourceMap"
+          },
+          {
+            loader: "sass-resources-loader?sourceMap",
+            options: {
+              resources: [
+                "./assets/styles/site-customizations.default.scss",
+                "./assets/styles/bootstrap/pre-customizations.default.scss",
+                "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss",
+                "./assets/styles/bootstrap/customizations.scss"
+              ]
+            }
+          }
+        ]
       },
+
       {
         test: /\.jpg$/,
         loader: "file-loader"
