@@ -24,6 +24,7 @@ function srcPath(subdir) {
 }
 
 module.exports = {
+  mode:"production",
   entry: {
     app: [__dirname + "/typings/package.d.ts", __dirname + "/src/assetDependencies.js", __dirname + "/src/index.tsx"]
   },
@@ -84,7 +85,7 @@ module.exports = {
               }
             ]
           ],
-          presets: ["es2015", "stage-0", "react"]
+          presets: ["@babel/preset-env"],
         }
       },
       {

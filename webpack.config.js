@@ -14,6 +14,7 @@ function srcPath(subdir) {
 }
 
 module.exports = {
+  mode:"development",
   output: {
     filename: "[name].js",
     publicPath: "js/"
@@ -63,7 +64,7 @@ module.exports = {
               }
             ]
           ],
-          presets: ["es2015", "stage-0", "react"]
+          presets: ["@babel/preset-env"],
         }
       },
       {

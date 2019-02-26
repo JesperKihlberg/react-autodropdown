@@ -5,7 +5,7 @@ let webpack = require("webpack");
 let WebpackConfig = require("webpack-config");
 module.exports = new WebpackConfig.Config().extend({
   "webpack.config.app.js": config => {
-    config.module.rules.filter(l => l.loader == "babel-loader").forEach(b => b.query.presets.push("react-hmre"));
+    config.module.rules.filter(l => l.loader == "babel-loader");
     config.output.filename = "[name].js";
     return config;
   }

@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import { Store, createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import reducers from "./Redux/Reducers";
-import IState from "./Redux/IState";
 import createSagaMiddleware from "redux-saga";
 
 import mySaga from "./Redux/sagas";
@@ -26,7 +25,7 @@ class AppReduxRoot extends React.Component<IAppRootExternalProps & IAppRootInter
     // create the saga middleware
     const sagaMiddleware = createSagaMiddleware();
 
-    this.store = createStore<IState>(reducers, composeWithDevTools(
+    this.store = createStore(reducers, composeWithDevTools(
       applyMiddleware(sagaMiddleware)
     ));
 

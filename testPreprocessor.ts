@@ -8,7 +8,8 @@ function babelTransform(src: string, filename: string) {
   const resultCore = babel.transform(src, {
     // Possibly needed for code coverage tools: auxiliaryCommentBefore: " istanbul ignore next ",
     filename: filename,
-    presets: [jestPreset, "react", "es2015", "stage-0"],
+        //presets: [jestPreset, "react", "es2015", "stage-0"],
+        presets: ["@babel/preset-env"],
     sourceMaps: "inline"
   });
   return resultCore.code;

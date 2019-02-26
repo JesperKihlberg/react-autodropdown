@@ -1,7 +1,8 @@
 import IState from "./IState";
 import { union } from "ts-action";
+import { ActionName } from "Pages/Main/Actions";
 
-const All = union({});
+const All = union({ ActionName });
 
 const initialState: IState = {
   main: "Test"
