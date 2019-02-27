@@ -54,7 +54,7 @@
     "chromedriver": "2.46.0",
     "core-js": "2.6.5",
     "cross-env": "5.2.0",
-    "css-loader": "2.1.0",
+    "css-loader": "1.0.1",
     "edgedriver": "4.17134.1",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.9.1",
