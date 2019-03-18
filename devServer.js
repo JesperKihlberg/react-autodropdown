@@ -5,8 +5,8 @@ let config = require("./config/webpack.config.dev.hotreload");
 let fs = require("fs");
 let https = require("https");
 
-const APP_PORT = 3002;
-const APP_PORT_SEC = 3445;
+const APP_PORT = 3003;
+const APP_PORT_SEC = 3446;
 let app = express();
 let compiler = webpack(config);
 

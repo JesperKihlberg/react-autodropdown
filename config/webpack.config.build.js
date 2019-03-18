@@ -28,7 +28,6 @@ module.exports = {
   entry: {
     app: [
       path.resolve("typings") + "/package.d.ts",
-      path.resolve("src") + "/assetDependencies.js",
       path.resolve("src") + "/index.tsx"
     ]
   },

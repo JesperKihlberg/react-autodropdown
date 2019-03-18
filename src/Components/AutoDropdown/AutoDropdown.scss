@@ -1,0 +1,50 @@
+// @import "../../../assets/styles/common/mixins/mixins";
+$item-border: 1px solid rgb(122, 156, 211);
+// .input {
+//   margin-bottom: 0;
+//   @include input();
+// }
+// .dropdown input {
+//   cursor: pointer !important;
+// }
+.container {
+  position: relative;
+  display: inline-block;
+}
+.inputContainer {
+  position: relative;
+}
+.addon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin: 1px;
+  padding: 0 3px;
+  background: white;
+  height: calc(100% - 2px);
+  user-select: none;
+}
+.listContainer {
+  position: absolute;
+  border: $item-border;
+  width: 99%;
+  overflow: auto;
+  z-index: 10000;
+}
+.listElement {
+  cursor: pointer !important;
+  list-style-type: none;
+  display: flex;
+  background-color: white;
+  align-items: center;
+}
+
+.selected {
+  color: white;
+  background-color: rgb(30, 144, 255);
+}

@@ -5,10 +5,10 @@ import "raf/polyfill";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import AppReduxRoot from "./AppReduxRoot";
+import Main from "Pages/Main/Main";
 
 const runAppInternal = () => {
-  ReactDOM.render(<AppReduxRoot />, document.getElementById("root"));
+  ReactDOM.render(<Main />, document.getElementById("root"));
 };
 
 const runApp = () => {

@@ -31,14 +31,14 @@
   $button-shadow-accent: rgba(172, 36, 109, 0.6);
   $button-shadow-default: rgba(7, 26, 49, 0.55);
 
-  --hero-url: url("../../../assets/img/hero.png");
-  --header-logo-url: url("../../../assets/img/logo-norsk.svg");
-  --faded-logo-url: url("../../../assets/img/logo-norsk-gray.svg");
-  --header-burger-icon-url: url("../../../assets/img/burger.svg");
-  --body-background: url("../../img/bg-wave-x-1-copy.png");
-  --footer-bankid-url: url("../../../../assets/img/bankID_Logo_Negativ_RGB.png");
-  --shapes-url: url("../../../../assets/img/col-shapes.svg");
-  --notice-image-url: url("../../../../assets/img/img-merk-right.png");
+  // --hero-url: url("../../../assets/img/hero.png");
+  // --header-logo-url: url("../../../assets/img/logo-norsk.svg");
+  // --faded-logo-url: url("../../../assets/img/logo-norsk-gray.svg");
+  // --header-burger-icon-url: url("../../../assets/img/burger.svg");
+  // --body-background: url("../../img/bg-wave-x-1-copy.png");
+  // --footer-bankid-url: url("../../../../assets/img/bankID_Logo_Negativ_RGB.png");
+  // --shapes-url: url("../../../../assets/img/col-shapes.svg");
+  // --notice-image-url: url("../../../../assets/img/img-merk-right.png");
 
   --text-color: $clr-text;
   --font-family: "Open Sans";
@@ -108,7 +108,7 @@
   --input-padding-left: 20px;
   --input-background-color: $clr-background;
   --input-border-radius: $default-border-radius;
-  --input-border-width: 1px;
+  --input-border-width: 4px;
   --input-border: var(--input-border-width) solid var(--input-border-color);
   --light-input-border-color: $clr-neutral-light;
   --input-border-color: $clr-neutral-darker;
