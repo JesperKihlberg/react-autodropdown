@@ -23,7 +23,7 @@ interface IAutoDropdownExternalProps {
   dropdown?: boolean;
   elements: { name: string; id: string }[];
   addon?: string | JSX.Element;
-  styles: { inputStyle: string; dropdownContainerStyle: string; dropdownItemStyle: string };
+styles?: { input: string; addon:string; itemContainerStyle: string; itemStyle: string };
 }
 
 interface IAutoDropdownState {
