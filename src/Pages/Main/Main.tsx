@@ -1,5 +1,5 @@
 import React from "react";
-import { AutoDropdown } from "Components/AutoDropdown/AutoDropdown";
+import AutoDropdown from "Components/AutoDropdown/AutoDropdown";
 
 interface IMainDispatchProps {}
 
@@ -13,11 +13,9 @@ class Main extends React.Component<IMainProps, {}> {
       <div>
         MAIN{" "}
         <div>
-          <AutoDropdown elements={[{ name: "test", id: "test" },{ name: "test", id: "tes2t" },{ name: "test", id: "test2" }]} />
+          <AutoDropdown elements={[{ name: "test", id: "test" }, { name: "test", id: "tes2t" }, { name: "test", id: "test2" }]} />
         </div>
-        <div>
-          Hestesko
-        </div>
+        <div>Hestesko</div>
       </div>
     );
   }

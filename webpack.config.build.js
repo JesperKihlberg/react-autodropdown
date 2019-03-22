@@ -26,10 +26,7 @@ function srcPath(subdir) {
 module.exports = {
   mode: "production",
   entry: {
-    app: [
-      path.resolve("typings") + "/package.d.ts",
-      path.resolve("src") + "/index.tsx"
-    ]
+    app: [path.resolve("typings") + "/package.d.ts", path.resolve("src") + "/index.tsx"]
   },
   output: {
     path: path.resolve("lib"),
@@ -134,7 +131,7 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               sourceMap: true,
-              plugins: () => [autoprefixerplugin, customProperties()]
+              plugins: () => [autoprefixer()]
             }
           },
           {
@@ -163,7 +160,7 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               sourceMap: true,
-              plugins: () => [autoprefixerplugin, customProperties()]
+              plugins: () => [autoprefixer()]
             }
           },
           {
@@ -193,7 +190,7 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               sourceMap: true,
-              plugins: () => [autoprefixerplugin, customProperties()]
+              plugins: () => [autoprefixer()o]
             }
           },
           {

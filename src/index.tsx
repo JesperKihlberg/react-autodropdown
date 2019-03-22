@@ -1,18 +1,3 @@
-import "core-js/es6/map";
-import "core-js/es6/set";
-import "raf/polyfill";
+import AutoDropdown from "Components/AutoDropdown/AutoDropdown";
 
-import React from "react";
-import ReactDOM from "react-dom";
-
-import Main from "Pages/Main/Main";
-
-const runAppInternal = () => {
-  ReactDOM.render(<Main />, document.getElementById("root"));
-};
-
-const runApp = () => {
-    runAppInternal();
-};
-
-export { runApp };
+export default AutoDropdown;

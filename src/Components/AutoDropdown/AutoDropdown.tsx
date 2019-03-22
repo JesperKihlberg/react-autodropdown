@@ -10,7 +10,7 @@ export interface IInputValueChangeEventTarget extends EventTarget {
 export interface IInputValueChangeEvent<T> extends React.FormEvent<T> {
   target: IInputValueChangeEventTarget;
 }
-interface IAutoDropdownDispatchProps {
+export interface IAutoDropdownDispatchProps {
   onChange?: (e: ChangeEvent<EventTarget>) => void;
   onBlur?: (focusEvent: FocusEvent<any>) => void;
   onFocus?: (focusEvent: FocusEvent<any>) => void;
@@ -18,12 +18,12 @@ interface IAutoDropdownDispatchProps {
   onElementSelected?: (id: string) => void;
 }
 
-interface IAutoDropdownExternalProps {
+export interface IAutoDropdownExternalProps {
   value?: string;
   dropdown?: boolean;
   elements: { name: string; id: string }[];
   addon?: string | JSX.Element;
-styles?: { input: string; addon:string; itemContainerStyle: string; itemStyle: string };
+  styles?: { input: string; addon: string; itemContainerStyle: string; itemStyle: string };
 }
 
 interface IAutoDropdownState {
@@ -33,7 +33,7 @@ interface IAutoDropdownState {
 }
 interface IAutoDropdownProps extends IAutoDropdownExternalProps, IAutoDropdownDispatchProps {}
 
-export class AutoDropdown extends React.Component<IAutoDropdownProps, IAutoDropdownState> {
+export default class AutoDropdown extends React.Component<IAutoDropdownProps, IAutoDropdownState> {
   constructor(props: IAutoDropdownProps) {
     super(props);
     this.state = { menuVisible: false, input: "", selectedId: null };
@@ -165,7 +165,9 @@ export class AutoDropdown extends React.Component<IAutoDropdownProps, IAutoDropd
       <div onBlur={this.blur} className={styles.container}>
         <div className={styles.inputContainer}>
           <input type="text" name="name" {...textInputProps} />
-          <div className={styles.addon}>{this.state.menuVisible ? "˄" : "˅"}</div>
+          <div className={styles.addon} onClick={this.inputClick}>
+            {this.state.menuVisible ? "˄" : "˅"}
+          </div>
         </div>
         {this.state.menuVisible && (
           <div className={styles.listContainer}>
