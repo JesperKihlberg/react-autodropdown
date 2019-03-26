@@ -1,5 +1,7 @@
 import React from "react";
-import AutoDropdown from "Components/AutoDropdown/AutoDropdown";
+import AutoDropdown from "index";
+
+const styles = require("./Main.scss");
 
 interface IMainDispatchProps {}
 
@@ -13,7 +15,10 @@ class Main extends React.Component<IMainProps, {}> {
       <div>
         MAIN{" "}
         <div>
-          <AutoDropdown elements={[{ name: "test", id: "test" }, { name: "test", id: "tes2t" }, { name: "test", id: "test2" }]} />
+          <AutoDropdown
+            elementClassNames={{ input: styles.input }}
+            elements={[{ name: "test1", id: "test" }, { name: "test2", id: "tes2t" }, { name: "test3", id: "test2" }]}
+          />
         </div>
         <div>Hestesko</div>
       </div>

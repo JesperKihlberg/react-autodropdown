@@ -4,9 +4,9 @@ $item-border: 1px solid rgb(122, 156, 211);
 //   margin-bottom: 0;
 //   @include input();
 // }
-// .dropdown input {
-//   cursor: pointer !important;
-// }
+.dropdown {
+  cursor: pointer !important;
+}
 .container {
   position: relative;
   display: inline-block;
@@ -35,12 +35,12 @@ $item-border: 1px solid rgb(122, 156, 211);
   width: 99%;
   overflow: auto;
   z-index: 10000;
+  background-color: white;
 }
 .listElement {
   cursor: pointer !important;
   list-style-type: none;
   display: flex;
-  background-color: white;
   align-items: center;
 }
 

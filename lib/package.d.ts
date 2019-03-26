@@ -13,7 +13,7 @@ interface IAutoDropdownExternalProps {
   dropdown?: boolean;
   elements: { name: string; id: string }[];
   addon?: string | JSX.Element;
-  styles?: { input: string; addon: string; itemContainerStyle: string; itemStyle: string };
+  elementClassNames?: { input?: string; addon?: string; itemContainer?: string; item?: string; selectedItem?: string };
 }
 export interface AutoDropdownProps extends React.Props<AutoDropdown>, IAutoDropdownExternalProps, IAutoDropdownDispatchProps {}
 

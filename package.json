@@ -3,7 +3,7 @@
   "private": false,
   "description": "A simple autodropdown",
   "repository": "",
-  "version": "0.3.580",
+  "version": "0.3.802",
   "main": "lib/package.js",
   "types": "lib/package.d.ts",
   "files": [

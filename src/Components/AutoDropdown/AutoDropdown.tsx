@@ -23,7 +23,7 @@ export interface IAutoDropdownExternalProps {
   dropdown?: boolean;
   elements: { name: string; id: string }[];
   addon?: string | JSX.Element;
-  styles?: { input: string; addon: string; itemContainerStyle: string; itemStyle: string };
+  elementClassNames?: { input?: string; addon?: string; itemContainer?: string; item?: string; selectedItem?: string };
 }
 
 interface IAutoDropdownState {
@@ -107,7 +107,7 @@ export default class AutoDropdown extends React.Component<IAutoDropdownProps, IA
     const currentIndex = ids && ids.find((x: string) => x === highlightedId);
     this.props.onElementSelected && this.props.onElementSelected(currentIndex);
     this.props.onChange && this.props.onChange(currentIndex as any);
-    this.setState({ selectedId: currentIndex });
+    this.setState({ selectedId: currentIndex, menuVisible: false });
   };
   highlightMatches(searchString: string, title: string) {
     const trimmedSearch = searchString ? searchString.trim() : "";
@@ -150,32 +150,50 @@ export default class AutoDropdown extends React.Component<IAutoDropdownProps, IA
     const selectedElement = this.props.value && this.props.elements && this.props.elements.find(x => x.id === this.props.value);
     const selectedElementText = selectedElement && selectedElement.name;
     const displayedValue = this.state.menuVisible ? this.state.input : selectedElement ? selectedElementText : this.state.input;
+    const inputClassName = classnames(
+      styles.input,
+      this.props.dropdown && styles.dropdown,
+      this.props.elementClassNames && this.props.elementClassNames.input
+    );
 
-    const textInputProps = {
-      ...this.props,
-      className: classnames(styles.input, this.props.dropdown && styles.dropdown),
-      value: displayedValue,
-      onChange: this.onInputValueChange,
-      onFocus: this.props.onFocus,
-      onClick: this.inputClick,
-      onKeyDown: this.onKeyDown,
-      readOnly: this.props.dropdown
-    };
     return (
       <div onBlur={this.blur} className={styles.container}>
         <div className={styles.inputContainer}>
-          <input type="text" name="name" {...textInputProps} />
-          <div className={styles.addon} onClick={this.inputClick}>
+          <input
+            type="text"
+            name="name"
+            className={inputClassName}
+            value={displayedValue}
+            onChange={this.onInputValueChange}
+            onFocus={this.props.onFocus}
+            onClick={this.inputClick}
+            onKeyDown={this.onKeyDown}
+            readOnly={this.props.dropdown}
+          />
+          <div
+            className={classnames(styles.addon, this.props.elementClassNames && this.props.elementClassNames.addon)}
+            onClick={this.inputClick}
+          >
             {this.state.menuVisible ? "˄" : "˅"}
           </div>
         </div>
         {this.state.menuVisible && (
-          <div className={styles.listContainer}>
+          <div
+            className={classnames(
+              styles.listContainer,
+              this.props.elementClassNames && this.props.elementClassNames.itemContainer
+            )}
+          >
             {this.props.elements &&
               this.props.elements.map(x => (
                 <div
                   key={x.id}
-                  className={classnames(styles.listElement, this.state.selectedId === x.id && styles.selected)}
+                  className={classnames(
+                    styles.listElement,
+                    this.props.elementClassNames && this.props.elementClassNames.item,
+                    this.state.selectedId === x.id && styles.selected,
+                    this.state.selectedId === x.id && this.props.elementClassNames && this.props.elementClassNames.selectedItem
+                  )}
                   onMouseEnter={() => this.onElementClick(x.id)}
                   onMouseLeave={() => this.onElementClick(null)}
                 >
